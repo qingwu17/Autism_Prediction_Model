@@ -1,4 +1,4 @@
-# Predict the Risk of ASD Using Whole Exome Sequencing
+# Predict the Risk of ASD Using WES Data
 
 # Requirements
 - Python>=3.7
