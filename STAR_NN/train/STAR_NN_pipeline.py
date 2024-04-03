@@ -109,8 +109,8 @@ class STAR_NN_Pipeline():
         fpr, tpr, _ = roc_curve(y_test, test_pred_score_avg)
         auc_score = auc(fpr, tpr)
 
-        # self.save4roc_plot(y_test, test_pred_score_avg, file_name="/users/qwu24/data/silvio/Qing_Wu/SFARI/batch_jobs/python_script/net/wes12.deepvariant.selFeat1489.auc_" + self.data_params['id'] + ".csv")
-        # self.save_prediction(samples_SPID_test, X_test, test_pred_score_avg, y_test, file_name="/users/qwu24/data/silvio/Qing_Wu/SFARI/batch_jobs/python_script/net/wes12.deepvariant.selFeat1489.y_test_pred_" + self.data_params['id'] + ".csv")
+        # self.save4roc_plot(y_test, test_pred_score_avg, file_name="/PATH/SFARI/batch_jobs/python_script/net/wes12.deepvariant.selFeat1489.auc_" + self.data_params['id'] + ".csv")
+        # self.save_prediction(samples_SPID_test, X_test, test_pred_score_avg, y_test, file_name="/PATH/SFARI/batch_jobs/python_script/net/wes12.deepvariant.selFeat1489.y_test_pred_" + self.data_params['id'] + ".csv")
         print(self.data_params['id'], "\nauc:", auc_score)
 
         return fpr, tpr, auc_score
