@@ -74,4 +74,4 @@ auc_lst.append(auc_score)
 names.append(params.data['id'])
 # endregion
 
-plot_roc_auc(fpr_lst, tpr_lst, auc_lst, names, file_name="/users/qwu24/data/silvio/Qing_Wu/SFARI/batch_jobs/python_script/net/train/wes12.deepvariant.roc_auc.sparse-net.pack4_wval.avg.pdf")
+plot_roc_auc(fpr_lst, tpr_lst, auc_lst, names, file_name="/PATH/SFARI/batch_jobs/python_script/net/train/wes12.deepvariant.roc_auc.sparse-net.pack4_wval.avg.pdf")
