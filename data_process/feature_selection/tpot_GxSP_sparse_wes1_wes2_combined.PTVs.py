@@ -16,7 +16,7 @@ from tpot import TPOTClassifier
 from tpot.config import classifier_config_dict
 
 import sys
-sys.path.insert(0, '/users/qwu24/data/silvio/Qing_Wu/SFARI/batch_jobs/python_script/machine_learning_script/')
+sys.path.insert(0, '/PATH/python_script/machine_learning_script/')
 from get_SPxG_input_data_exonic_wes1_wes2_combined import generate_input_df_SPARK_wes12, data_frame_to_scipy_sparse_matrix
 
 # adjust TPOTClassifier parameters
@@ -25,7 +25,7 @@ POP_SIZE = int(sys.argv[2])
 CV = int(sys.argv[3])
 METRIC = sys.argv[4]
 
-output_file_prefix = "/users/qwu24/data/silvio/Qing_Wu/SFARI/batch_jobs/python_script/machine_learning_script/tpot_out/wes1_wes2_combined.deepvariant.tpot_GxSP_woA_sparse_exonic"
+output_file_prefix = "/PATH/python_script/machine_learning_script/tpot_out/wes1_wes2_combined.deepvariant.tpot_GxSP_woA_sparse_exonic"
 output_file_surfix = "pipeline.PTVs.py"
 
 output_pipeline_file_name = "_".join(str(i) for i in [output_file_prefix, NUM_GEN, POP_SIZE, CV, METRIC, output_file_surfix])
@@ -34,11 +34,11 @@ print(type(NUM_GEN), type(POP_SIZE), type(CV), type(METRIC), sep=" / ")
 print(output_pipeline_file_name)
 
 # get SPxG input data, variant annotation matrix and variant to gene index list
-VxA_anno_file_exonic = '/users/qwu24/data/silvio/Qing_Wu/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het.var_anno_dummy_df.txt'
+VxA_anno_file_exonic = '/PATH/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het.var_anno_dummy_df.txt'
 
-GxSP_matrix_file_exonic_PTVs_wes12 = "/users/qwu24/data/silvio/Qing_Wu/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het_by_sample_matrix_cleaned_2GxSP.PTVs.txt"
-V2G_unconsec_lst_file_exonic_PTVs_wes12 ='/users/qwu24/data/silvio/Qing_Wu/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het.idx_var2gene_lst_df.unconsecutive_indices_splited.PTVs.txt'
-V2G_lst_file_exonic_PTVs_wes12 ='/users/qwu24/data/silvio/Qing_Wu/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het.idx_var2gene_lst_df.PTVs.txt'
+GxSP_matrix_file_exonic_PTVs_wes12 = "/PATH/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het_by_sample_matrix_cleaned_2GxSP.PTVs.txt"
+V2G_unconsec_lst_file_exonic_PTVs_wes12 ='/PATH/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het.idx_var2gene_lst_df.unconsecutive_indices_splited.PTVs.txt'
+V2G_lst_file_exonic_PTVs_wes12 ='/PATH/SFARI/hail_out/SPARK/wes1_wes2_combined.deepvariant.rare1pct_variants_het.idx_var2gene_lst_df.PTVs.txt'
 
 X_exonic_PTVs_wes12, y_exonic_PTVs_wes12, _, _ = generate_input_df_SPARK_wes12(GxSP_matrix_file=GxSP_matrix_file_exonic_PTVs_wes12, 
                                                                             var2gene_lst_file=V2G_lst_file_exonic_PTVs_wes12, var2gene_unconsec_lst_file=V2G_unconsec_lst_file_exonic_PTVs_wes12,
