@@ -1,4 +1,5 @@
-# Predict the Risk of ASD Using WES Data
+# A deep learning model for prediction of autism status using whole-exome sequencing data
+
 
 # Requirements
 - Python>=3.7
